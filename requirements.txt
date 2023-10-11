@@ -1,6 +1,16 @@
 numpy
+setuptools
 tensorflow
 keras
 matplotlib
 seaborn
 scikit-learn
+python-box==6.0.2
+pyYAML
+tqdm     #to see progress bar
+ensure==1.0.2
+joblib
+types-pyYAML
+scipy
+Flask
+Flask-cors 
