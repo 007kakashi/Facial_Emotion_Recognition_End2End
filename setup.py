@@ -5,9 +5,9 @@ with open('README.md','r',encoding='utf-8') as f:
 
 __version__='0.0.0'
 
-REPO_NAME='Facial_Emotion_recognition_End2End'
+REPO_NAME='Facial_Emotion_Recognition_End2End'
 AUTHER_USER_NAME='007kakashi'
-SRC_REPO='Facial_Emotion_recognition_End2End'
+SRC_REPO='Facial_Emotion_Recognition_End2End'
 AUTHER_EMAIL='upendrasgosavi@gmail.com'
 
 setuptools.setup(
