@@ -4,7 +4,7 @@ import logging
 
 logging.basicConfig(level=logging.INFO,format='[%(asctime)s]: %(message)s')
 
-project_name="Facial_Emotion_Recognition"
+project_name="Facial_Emotion_Recognition_End2End"
 
 list_of_files=[
 
