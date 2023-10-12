@@ -56,7 +56,7 @@ def load_json(path:Path):
 
     
 @ensure_annotaions
-def save_bin(data:any, path:Path):
+def save_bin(data:Any, path:Path):
     """save binary file
 
     Args:
@@ -68,7 +68,7 @@ def save_bin(data:any, path:Path):
 
 
 @ensure_annotaions
-def load_bin(path:Path) -> any:
+def load_bin(path:Path) -> Any:
 
     data= joblib.load(path)
     logger.info(f'binary file has been loaded from : {path}')
