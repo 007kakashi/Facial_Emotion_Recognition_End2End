@@ -4,14 +4,14 @@ import yaml
 from src.Facial_Emotion_Recognition.logger import logger
 import json
 import joblib
-from ensure import ensure_annotaions
+# from ensure import ensure_annotaions
 from box import ConfigBox
 from pathlib import Path
 from typing import Any
 import base64
 
 
-@ensure_annotaions
+# @ensure_annotaions
 def read_yaml(path_to_yaml: Path) ->ConfigBox:
 
     try:
@@ -27,7 +27,7 @@ def read_yaml(path_to_yaml: Path) ->ConfigBox:
         raise e
     
 
-@ensure_annotaions
+# @ensure_annotaions
 def create_directories(path_to_directories: list, verbos=True):
     
     for path in path_to_directories:
@@ -36,7 +36,7 @@ def create_directories(path_to_directories: list, verbos=True):
             logger.info(f'created directories at :{path}')
 
 
-@ensure_annotaions
+# @ensure_annotaions
 def save_json(path:Path, data:dict) ->ConfigBox:
 
     with open(path ,'w') as f:
@@ -45,7 +45,7 @@ def save_json(path:Path, data:dict) ->ConfigBox:
     logger.info(f'jason file has been saved at : {path}')
 
 
-@ensure_annotaions
+# @ensure_annotaions
 def load_json(path:Path):
 
     with open(path) as f:
@@ -55,7 +55,7 @@ def load_json(path:Path):
     return ConfigBox(json_file)
 
     
-@ensure_annotaions
+# @ensure_annotaions
 def save_bin(data:Any, path:Path):
     """save binary file
 
@@ -67,7 +67,7 @@ def save_bin(data:Any, path:Path):
     logger.info(f'binary file has been created at : {path}')
 
 
-@ensure_annotaions
+# @ensure_annotaions
 def load_bin(path:Path) -> Any:
 
     data= joblib.load(path)
@@ -76,7 +76,7 @@ def load_bin(path:Path) -> Any:
     return data
 
 
-@ensure_annotaions
+# @ensure_annotaions
 def get_size(path:Path) -> str:
 
     size_in_kb=round(os.path.getsize(path)/1024)
@@ -96,6 +96,7 @@ def encode_image_into_base64(cropped_image_path):
 
     with open(cropped_image_path, 'rb') as f:
         return base64.b64encode(f.read())
+
 
 
 
