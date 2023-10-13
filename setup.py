@@ -7,7 +7,7 @@ __version__='0.0.0'
 
 REPO_NAME='Facial_Emotion_Recognition_End2End'
 AUTHER_USER_NAME='007kakashi'
-SRC_REPO='Facial_Emotion_Recognition_End2End'
+SRC_REPO='Facial_Emotion_Recognition'
 AUTHER_EMAIL='upendrasgosavi@gmail.com'
 
 setuptools.setup(
