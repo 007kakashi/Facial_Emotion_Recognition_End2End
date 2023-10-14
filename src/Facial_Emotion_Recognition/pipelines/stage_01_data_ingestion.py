@@ -4,7 +4,6 @@ from src.Facial_Emotion_Recognition.components.data_ingestion import DataIngesti
 from src.Facial_Emotion_Recognition.logger import logger
 
 
-STAGE_NAME='Data Ingestion Stage'
 
 class DataIngestionPipeline():
     def __init__(self) -> None:
@@ -19,20 +18,6 @@ class DataIngestionPipeline():
         data_ingestion.download_file()
         data_ingestion.extract_zip_file()
 
-if __name__=='__main__':
-
-    try:
-
-        logger.info(f'>>>>>>>>>> stage {STAGE_NAME} started <<<<<<<< ')
-        
-        pipeline=DataIngestionPipeline()
-        pipeline.main()
-
-        logger.info(f'>>>>>>>>> stage {STAGE_NAME} completed <<<<<<<<< ')
-    
-    except Exception as e:
-        logger.exception(e)
-        raise e
 
 
 
