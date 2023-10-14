@@ -1,7 +1,7 @@
 from src.Facial_Emotion_Recognition.constant import *
 from src.Facial_Emotion_Recognition.utils.common import read_yaml,create_directories
-from src.Facial_Emotion_Recognition.entity.config_entity import DataIngestionConfig
-# from src.Facial_Emotion_Recognition.constant import *
+from src.Facial_Emotion_Recognition.entity.config_entity import DataIngestionConfig,PrepareBaseModel_Arguments
+from src.Facial_Emotion_Recognition.logger import logger
 
 class ConfigurationManager:
 
@@ -29,5 +29,29 @@ class ConfigurationManager:
         )
 
         return data_ingestion_config
+    
+    def get_prepare_base_model_config(self) -> PrepareBaseModel_Arguments:
+        
+        config=self.config.prepare_base_model
+
+        create_directories([config.root_dir])
+
+        prepare_base_model_config= PrepareBaseModel_Arguments(
+
+            base_model_path=config.base_model_path,
+            root_dir=config.root_dir,
+            updated_base_model_path=config.updated_base_model_path,
+            params_classes=self.params.CLASSES,
+            params_image_size=self.params.IMAGE_SIZE,
+            params_include_top=self.params.INCLUDE_TOP,
+            params_weights=self.params.WEIGHTS,
+            params_learning_rate=self.params.LEARNING_RATE,
+             
+        )      
+
+        logger.info('config of base model has prepared')
+
+        return prepare_base_model_config    
+                 
     
     
